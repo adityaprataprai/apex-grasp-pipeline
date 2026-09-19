@@ -37,7 +37,7 @@ The project is designed around explicit stage interfaces, machine-readable artif
 
 ## What this repository contains
 
-[Report]([https://drive.google.com/file/d/1Zoi_aP0ZkFHEHzC_DCjAL5BorYmZx0sD/view?usp=sharing])   
+[Report](https://drive.google.com/file/d/1Zoi_aP0ZkFHEHzC_DCjAL5BorYmZx0sD/view?usp=sharing)   
 The repository contains the complete software scaffold for the four-stage pipeline:
 
 | Stage | Purpose | Main output |
