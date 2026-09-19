@@ -1,0 +1,117 @@
+# REQUIRED USER-SUPPLIED CONFIGURATION.
+# No model, checkpoint, camera, robot, dataset path, or threshold is silently selected.
+project:
+  seed: null                    # REQUIRED for deterministic evaluation
+  artifact_dir: null            # REQUIRED writable directory
+  device: null                  # REQUIRED: e.g. cpu, cuda, cuda:0
+
+stage1:
+  backend: null                 # REQUIRED: rule | openai_compatible | python_callable
+  parser_version: null          # REQUIRED provenance label
+  ontology_path: null           # REQUIRED path to configs/ontology.yaml or your replacement
+  openai_compatible:
+    base_url: null              # REQUIRED only for this backend
+    model: null                 # REQUIRED only for this backend
+    api_key_env: null           # REQUIRED only for this backend, name of env var, not secret itself
+    timeout_s: null             # REQUIRED only for this backend
+  python_callable:
+    module: null                # REQUIRED only for this backend
+    function: null              # REQUIRED only for this backend
+
+stage2:
+  detector_backend: null        # REQUIRED: grounding_dino | python_callable | replay
+  segmenter_backend: null       # REQUIRED: sam2 | python_callable | replay
+  attribute_backend: null       # REQUIRED: basic_color | python_callable | none
+  detector_checkpoint: null     # REQUIRED for grounding_dino
+  detector_config: null         # REQUIRED for Grounding DINO implementations needing config file
+  sam2_checkpoint: null         # REQUIRED for sam2
+  sam2_model_cfg: null          # REQUIRED for sam2
+  box_threshold: null           # REQUIRED; tune on validation data
+  text_threshold: null          # REQUIRED; tune on validation data
+  nms_iou_threshold: null       # REQUIRED
+  min_mask_area_ratio: null     # REQUIRED
+  min_accept_score: null        # REQUIRED
+  min_margin: null              # REQUIRED
+  top_k: null                   # REQUIRED
+  scoring_weights:
+    category: null              # REQUIRED; normalized at runtime after absent evidence is removed
+    attribute: null
+    reference_2d: null
+    visual_quality: null
+    prompt_similarity: null
+  color_prototypes_path: null   # REQUIRED if basic_color is used
+  python_callable:
+    detector_module: null
+    detector_function: null
+    segmenter_module: null
+    segmenter_function: null
+    attribute_module: null
+    attribute_function: null
+  replay_predictions: null      # REQUIRED only for replay backend
+
+stage3:
+  depth_unit_to_m: null         # REQUIRED, e.g. 0.001 for millimetres
+  min_valid_depth_m: null       # REQUIRED
+  max_valid_depth_m: null       # REQUIRED
+  min_points_per_object: null   # REQUIRED
+  scene_up_axis: null           # REQUIRED [x,y,z] in scene frame for ABOVE/BELOW
+  access_probe_distance_m: null # REQUIRED for accessibility/open-corridor evidence
+  voxel_size_m: null            # REQUIRED (0 disables voxel downsampling)
+  outlier_percentile_low: null  # REQUIRED, 0..100
+  outlier_percentile_high: null # REQUIRED, 0..100
+  relation:
+    depth_margin_m: null        # REQUIRED for BEHIND/IN_FRONT_OF
+    image_overlap_min: null     # REQUIRED if overlap is part of BEHIND evidence
+    near_distance_m: null       # REQUIRED
+    between_corridor_m: null    # REQUIRED
+    wedged_clearance_m: null    # REQUIRED
+  decision:
+    relation_min_score: null    # REQUIRED
+    final_accept_score: null    # REQUIRED
+    final_margin: null          # REQUIRED
+    scoring_weights:
+      lang: null                # REQUIRED
+      attr: null
+      rel: null
+      visual: null
+      access: null
+
+stage4:
+  generator_backend: null       # REQUIRED: python_callable | replay
+  python_callable:
+    module: null                # REQUIRED for python_callable
+    function: null              # REQUIRED; signature documented in docs/ADAPTER_CONTRACTS.md
+  replay_predictions: null      # REQUIRED for replay
+  raw_top_k: null               # REQUIRED
+  output_top_n: null            # REQUIRED
+  gripper:
+    width_min_m: null           # REQUIRED from actual gripper
+    width_max_m: null           # REQUIRED from actual gripper
+    width_margin_m: null        # REQUIRED
+    finger_length_m: null       # REQUIRED for collision proxy
+    finger_width_m: null        # REQUIRED
+    finger_height_m: null       # REQUIRED
+    palm_depth_m: null          # REQUIRED
+  workspace:
+    min_xyz_m: null             # REQUIRED [x,y,z]
+    max_xyz_m: null             # REQUIRED [x,y,z]
+  max_approach_distance_m: null # REQUIRED
+  approach_samples: null        # REQUIRED swept-path samples
+  collision_margin_m: null      # REQUIRED
+  min_contact_support: null     # REQUIRED, normalized 0..1
+  normal_angle_tolerance_deg: null # REQUIRED
+  safety_clearance_m: null      # REQUIRED
+  scoring_weights:
+    model_quality: null         # REQUIRED
+    clearance: null
+    approach: null
+    visibility: null
+    stability: null
+    constraint: null
+
+evaluation:
+  stage1_manifest: null
+  stage2_manifest: null
+  stage3_manifest: null
+  stage4_manifest: null
+  end_to_end_manifest: null

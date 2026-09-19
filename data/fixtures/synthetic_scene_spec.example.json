@@ -1,0 +1,11 @@
+{
+  "image_size": [640, 480],
+  "background_rgb": [40, 40, 40],
+  "background_depth": 2.5,
+  "intrinsics": {"fx": 600.0, "fy": 600.0, "cx": 320.0, "cy": 240.0},
+  "instruction": "Grab the blue carton behind the transparent bottle.",
+  "objects": [
+    {"id": "obj_carton", "category": "carton", "bbox_xyxy": [250, 190, 390, 330], "rgb": [40, 80, 200], "depth_m": 1.20},
+    {"id": "obj_bottle", "category": "bottle", "bbox_xyxy": [300, 160, 350, 300], "rgb": [180, 210, 220], "depth_m": 0.90}
+  ]
+}

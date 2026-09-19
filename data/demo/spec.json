@@ -1,0 +1,51 @@
+{
+  "image_size": [
+    320,
+    240
+  ],
+  "background_rgb": [
+    60,
+    60,
+    60
+  ],
+  "background_depth": 3.0,
+  "instruction": "Grab the blue carton behind the transparent bottle using its exposed side.",
+  "intrinsics": {
+    "fx": 250.0,
+    "fy": 250.0,
+    "cx": 160.0,
+    "cy": 120.0
+  },
+  "objects": [
+    {
+      "id": "bottle",
+      "bbox_xyxy": [
+        120,
+        80,
+        220,
+        180
+      ],
+      "rgb": [
+        180,
+        220,
+        240
+      ],
+      "depth_m": 1.0
+    },
+    {
+      "id": "carton",
+      "bbox_xyxy": [
+        100,
+        120,
+        200,
+        220
+      ],
+      "rgb": [
+        50,
+        100,
+        220
+      ],
+      "depth_m": 1.5
+    }
+  ]
+}

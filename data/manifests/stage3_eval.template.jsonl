@@ -1,0 +1,1 @@
+{"id":"S3-example","centroid_xyz":[0.0,0.0,1.0],"relations":[{"relation":"BEHIND","reference_ids":["ref_1_obj_01"],"satisfied":true}],"accessible":true,"access_threshold":0.5,"depth_consistent":null,"scene_graph_consistent":null,"prediction_path":"artifacts/example.stage3.json"}

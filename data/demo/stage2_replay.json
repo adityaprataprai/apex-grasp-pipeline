@@ -1,0 +1,28 @@
+{
+  "detections": [
+    {
+      "bbox_xyxy": [
+        100,
+        120,
+        200,
+        220
+      ],
+      "category_score": 0.98,
+      "prompt_score": 0.98,
+      "raw_id": "carton01",
+      "mask_path": "data/demo/carton_mask.png"
+    },
+    {
+      "bbox_xyxy": [
+        120,
+        80,
+        220,
+        180
+      ],
+      "category_score": 0.97,
+      "prompt_score": 0.97,
+      "raw_id": "bottle01",
+      "mask_path": "data/demo/bottle_mask.png"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+# HSV prototype centers are environment/camera dependent and MUST be calibrated before benchmark use.
+# Deliberately empty: do not fill from generic internet values for optimum benchmarking.
+prototypes: {}

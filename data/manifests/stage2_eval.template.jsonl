@@ -1,0 +1,1 @@
+{"id":"S2-example","target_object_id":"obj_01","bbox_xyxy":[10,10,100,100],"mask_path":"data/ground_truth/example_mask.png","prediction_path":"artifacts/example.stage2.json","attribute_correct":null,"intentionally_ambiguous":false,"latency_s":null}

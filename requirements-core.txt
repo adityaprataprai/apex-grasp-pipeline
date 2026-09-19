@@ -1,0 +1,6 @@
+# Core runtime only. External model repositories/checkpoints are intentionally NOT auto-installed.
+numpy>=1.24
+pydantic>=2.5
+PyYAML>=6.0
+Pillow>=10.0
+opencv-python>=4.8

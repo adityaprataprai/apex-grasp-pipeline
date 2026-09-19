@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+artifacts/*
+!artifacts/.gitkeep
+data/raw/
+data/processed/
+models/
+checkpoints/

@@ -1,0 +1,28 @@
+{
+  "grasps": [
+    {
+      "target_object_id": "obj_01",
+      "position_xyz": [
+        -0.05,
+        0.15,
+        1.5
+      ],
+      "quaternion_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "approach_vector": [
+        0,
+        0,
+        1
+      ],
+      "jaw_width_m": 0.05,
+      "model_quality": 0.95,
+      "provenance": {
+        "backend": "submission_replay"
+      }
+    }
+  ]
+}

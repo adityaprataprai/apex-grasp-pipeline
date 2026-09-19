@@ -1,0 +1,10 @@
+objects: [carton, bottle, parcel, package, box, item, roller, cable, container]
+actions: [GRASP, PICK, PLACE, MOVE, INSPECT, UNKNOWN]
+relations: [LEFT_OF, RIGHT_OF, ABOVE, BELOW, IN_FRONT_OF, BEHIND, BETWEEN, WEDGED_BETWEEN, NEAR, INSIDE]
+attributes:
+  color: [red, blue, green, yellow, orange, purple, black, white, gray, brown]
+  condition: [crushed, semi_crushed, torn, dented, folded, reflective]
+  size: [small, medium, large]
+  transparency: [transparent, semi_transparent, opaque]
+constraints:
+  preferred_grasp_region: [exposed_side, top, side, null]

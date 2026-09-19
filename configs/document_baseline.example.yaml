@@ -1,0 +1,22 @@
+# VALUES EXPLICITLY SUGGESTED IN THE PROVIDED SPECIFICATIONS.
+# They are NOT claimed to be optimal. Copy only after you deliberately choose to use them.
+stage2:
+  box_threshold: 0.30
+  text_threshold: 0.25
+  min_accept_score: 0.60
+  min_margin: 0.10
+  scoring_weights:
+    category: 0.30
+    attribute: 0.20
+    reference_2d: 0.20
+    visual_quality: 0.10
+    prompt_similarity: 0.20
+stage4:
+  raw_top_k: 100
+  scoring_weights:
+    model_quality: 0.35
+    clearance: 0.20
+    approach: 0.15
+    visibility: 0.10
+    stability: 0.10
+    constraint: 0.10
